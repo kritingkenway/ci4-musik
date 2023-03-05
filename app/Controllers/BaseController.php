@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\UserModel;
+use App\Models\ProductModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -21,6 +23,10 @@ use Psr\Log\LoggerInterface;
  */
 abstract class BaseController extends Controller
 {
+    protected $db;
+    protected $userModel;
+    protected $productModel;
+    // protected $validation;
     /**
      * Instance of the main Request object.
      *
@@ -35,7 +41,7 @@ abstract class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = [];
+    protected $helpers = ['number', 'form'];
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
@@ -53,6 +59,11 @@ abstract class BaseController extends Controller
 
         // Preload any models, libraries, etc, here.
 
+
+        $this->userModel = new UserModel();
+        $this->productModel = new ProductModel();
+        $this->db = \Config\Database::connect();
+        // $this->validation = \Config\Services::validation();
         // E.g.: $this->session = \Config\Services::session();
     }
 }

@@ -30,12 +30,25 @@ $routes->setAutoRoute(false);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
+// Login Route
+$routes->get('/logout', 'Auth::logout');
+$routes->get('/login', 'Auth::login');
+$routes->post('/login', 'Auth::login');
+$routes->get('/register', 'Auth::register');
+$routes->post('/register', 'Auth::register');
 // User Routes
-$routes->get('/', 'LandingPage::index');
+$routes->get('/collection/(:num)', 'LandingPage::product_detail/$1');
 $routes->get('/collection', 'LandingPage::collection');
+$routes->get('/', 'LandingPage');
+// Cart Route
+$routes->get('/cart', 'Cart::index');
+$routes->get('/cart/(:num)', 'Cart::buy/$1');
+
+
+
 
 // Admin Routes
-// $routes->get('admin/dashboard', "Admin\Dashboard::getIndex");
+$routes->get('/admin/dashboard', "Admin\Dashboard::index");
 
 
 

@@ -6,7 +6,7 @@ use App\Controllers\BaseController;
 
 class Dashboard extends BaseController
 {
-    public function getIndex()
+    public function index()
     {
         return view('admin/dashboard');
     }
