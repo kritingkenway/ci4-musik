@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <h2>Section title</h2>
+    <!-- <h2>Section title</h2>
     <div class="table-responsive">
         <table class="table table-striped table-sm">
             <thead>
@@ -189,7 +189,7 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+    </div> -->
 </main>
 
 <?php $this->endSection() ?>

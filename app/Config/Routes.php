@@ -49,6 +49,13 @@ $routes->get('/cart/(:num)', 'Cart::buy/$1');
 
 // Admin Routes
 $routes->get('/admin/dashboard', "Admin\Dashboard::index");
+$routes->post('/admin/produk/create', "Admin\Produk::create");
+// harus dibenerin ntar method nya--------------------------------------
+$routes->post('/admin/produk/update/(:num)', "Admin\Produk::update/$1");
+$routes->get('/admin/produk/delete/(:num)', "Admin\Produk::delete/$1");
+// -----------------------------------------------------------------------
+$routes->get('/admin/produk/(:num)', "Admin\Produk::editProduk/$1");
+$routes->get('/admin/produk', "Admin\Produk::index");
 
 
 

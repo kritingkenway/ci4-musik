@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manager Pages</title>
+    <title><?= $title ?></title>
 
     <link rel="stylesheet" href="<?= base_url() ?>/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/dist/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= base_url() ?>/css/dashboard.css">
-
+    <script src="<?= base_url() ?>/js/jquery.js"> </script>
 
 </head>
 
@@ -34,43 +34,44 @@
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3 sidebar-sticky">
-                    <ul class="nav flex-column">
+                    <ul id='Navbar' class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">
+
+                            <a class="nav-link <?= uri_string() == 'admin/dashboard' ? 'active' : '' ?>" aria-current="page" href="/admin/dashboard">
                                 <span data-feather="home" class="align-text-bottom"></span>
                                 Dashboard
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="file" class="align-text-bottom"></span>
                                 Orders
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link <?= uri_string() == 'admin/produk' ? 'active' : '' ?>" href="/admin/produk">
                                 <span data-feather="shopping-cart" class="align-text-bottom"></span>
                                 Products
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="users" class="align-text-bottom"></span>
                                 Customers
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </li> -->
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="bar-chart-2" class="align-text-bottom"></span>
                                 Reports
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </li> -->
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="layers" class="align-text-bottom"></span>
                                 Integrations
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
 
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
@@ -79,7 +80,7 @@
                             <span data-feather="plus-circle" class="align-text-bottom"></span>
                         </a>
                     </h6>
-                    <ul class="nav flex-column mb-2">
+                    <!-- <ul class="nav flex-column mb-2">
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="file-text" class="align-text-bottom"></span>
@@ -104,7 +105,7 @@
                                 Year-end sale
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </div>
             </nav>
 
@@ -123,5 +124,6 @@
 <script src="<?= base_url() ?>/dist/js/bootstrap.min.js">
 </script>
 
+<script src="<?= base_url() ?>/js/custom.js"> </script>
 
 </html>
