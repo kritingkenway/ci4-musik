@@ -6,15 +6,13 @@ class Cart extends BaseController
 {
     public function index()
     {
-        // $data = [
-        //     'title' => 'Cart',
-        //     'items' => session()->get('shopping-cart'),
-        //     'title' => $this->total(),
-        // ];
-        // return view('cart', $data);
-        // session()->remove('shopping-cart');
-        $cart = session('shopping-cart');
-        dd($cart);
+        $data = [
+            'title' => 'Cart',
+            'items' => session()->get('shopping-cart'),
+            'total' => $this->total(),
+        ];
+        // dd(session()->get('shopping-cart'));
+        return view('keranjang', $data);
     }
 
     public function buy($id)
@@ -81,7 +79,7 @@ class Cart extends BaseController
         $total = 0;
         $items = array_values(session('shopping-cart'));;
         foreach ($items as $i) {
-            $total = $items['harga_barang'] * $items['qty'];
+            $total = $i['harga_barang'] * $i['qty'];
         }
         return $total;
     }

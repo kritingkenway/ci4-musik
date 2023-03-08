@@ -112,7 +112,7 @@
                     <div class="product-details"><!--product-details-->
                         <div class="col-sm-5">
                             <div class="view-product">
-                                <img src="http://localhost/kelompok/images/accordion.jpg" alt="" />
+                                <img src="<?php base_url() ?>/assets/images/accordion.jpg" alt="" />
                             </div>
 
 
