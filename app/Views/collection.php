@@ -44,7 +44,7 @@
             <a class="nav-link mr-4" href="/collection">DAFTAR BARANG</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mr-4" href="login.php">KERANJANG</a>
+              <a class="nav-link mr-4" href="/cart"><img src="<?= base_url()?>/assets/images/s.png" class="card-img-top" alt="Image" height="42" width="42"></a>
           </li>
           <?php if (session()->has('logged-in')) { ?>
             <li class="nav-item">
