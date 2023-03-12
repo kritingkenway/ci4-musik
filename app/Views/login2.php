@@ -18,7 +18,7 @@
 
       </div>
     </div>
-    <form method="post" class="form">
+    <form method="post" action='/login' class="form">
       <label for="username" style="padding-top:13px">&nbsp;Username</label>
       <input id="username" class="form-content" type="username" name="username" autocomplete="on" required />
       <div class="form-border"></div>
