@@ -24,7 +24,7 @@ class Auth extends BaseController
             $data = [
                 'title' => 'Log in'
             ];
-            return view('login', $data);
+            return view('login2', $data);
         }
     }
 
