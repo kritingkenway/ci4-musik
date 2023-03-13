@@ -14,22 +14,14 @@
 
 
 
-    <title>MelodyStore.com</title>
+    <title>Keranjang belanja</title>
 </head>
 
 <body>
-    <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid text-center">
-        <div class="container">
-            <h1 class="display-4"><span class="font-weight-bold">Melody Store</span></h1>
-            <hr>
-            <p class="lead font-weight-bold">Toko Alat Musik Terlengkap di Subang<br>
-            </p>
-        </div>
-    </div>
-    <!-- Akhir Jumbotron -->
+  
 
     <!-- Navbar -->
+    <nav class="nav navbar-nav">
     <nav class="navbar navbar-expand-lg  bg-dark">
         <div class="container">
             <a class="navbar-brand text-white" href="index.html"><strong>Produk</strong></a>
