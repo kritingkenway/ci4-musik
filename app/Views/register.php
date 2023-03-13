@@ -1,85 +1,49 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+ <head>
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/css/index.css">
-  <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/fontawesome/css/all.min.css">
-
-  <title><?= $title ?></title>
-</head>
-
-<body>
-
-
-  <!-- Jumbotron -->
-  <div class="jumbotron jumbotron-fluid text-center">
-    <div class="container">
-      <h1 class="display-4"><span class="font-weight-bold">Melody Store</span></h1>
-      <hr>
-      <p class="lead font-weight-bold">Toko Alat Musik Terlengkap di Subang<br>
-      </p>
-    </div>
-  </div>
-  <!-- Akhir Jumbotron -->
-
-  <!-- Navbar -->
-  <div class="text-center">
-    <nav class="navbar navbar-expand-lg  bg-dark">
+      <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/css/style.css">
+      <title>Login</title>
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+      <style>
+        body {
+           
+      </style>
+      </head>
+         <body>
+           <div id="card">
+            <div id="card-content">
+      <div id="card-title">
       <div class="container">
-        <a class="navbar-brand text-white" href="#"><strong>Register</strong></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-      </div>
-    </nav>
-    <!-- Akhir Navbar -->
-
-
-
-    <!-- Awal Menu -->
-
-    <div class="text-center">
-
-      <div class="container">
-        <div class="header">
-          <strong class="h1 mb-3 font-weight-small ">
-            <h1>Register</h1>
-          </strong>
-          <?php if ($validation) { ?>
-            <?= $validation->listErrors() ?>
-          <?php } else { ?>
-            <p>Silakan Masukan User Name dan Password</p>
-          <?php } ?>
-
-        </div>
-        <form action="/register" method="post">
-
-          <label for="username" class="form-label">Username</label>
-          <input type="text" class="form-control" id="username" placeholder="Enter your Username" name='username'>
-
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Enter your password" name='password'>
-          <label for="Re-Password" class="form-label">Re-Enter Password</label>
-          <input type="password" class="form-control" id="Re-Password" placeholder="Re-Enter your password" name='passcnf'>
-
-
-          <div class="checkbox mb-2">
-            <label>
-              <!-- <input type="checkbox" value="remember-me"> Remember me </label> -->
+        <div class="row">
+          <div class="col-md-4 offset-md-4 mt-5">
+            <div class="card ">
+              <div class="card-title text-center">
+                <h1>Register Form</h1>
+              </div>
+              <div class="card-body">
+                <form action="login.php" method="post">
+                  <div class="form-group">
+                    <label for="username">Nama Lengkap</label>
+                    <input type="text" name="nama" class="form-control" id="name" aria-describedby="name" placeholder="Nama lengkap" autocomplete="off">
+                  </div>
+                  <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" id="username" aria-describedby="username" placeholder="username" autocomplete="off">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Konfirmasi Password</label>
+                    <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Password">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+              </div>
+            </div>
           </div>
-          <button class="btn btn-lg btn-primary btn-block" type="submit" name='register'>Login</button>
-        </form>
-        <!-- <a class="nav-link mr-4" href="home.php">LOGIN</a> -->
-        <div class="text-center">
-          <span class="d-inline">Already Have an Account? <a href="/register" class="d-inline text-decoration-none">Let's Sign In</a></span>
         </div>
-
-        <!-- Akhir Menu -->
+      </div>
+    </body>

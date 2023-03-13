@@ -1,6 +1,6 @@
 html{
-background: -webkit-linear-gradient(bottom, #453524, #503d2a);
-       background-repeat: no-repeat;
+background: -webkit-linear-gradient(bottom, #503d2a, #503d2a);
+       background-repeat: repeat;
 }
     #card {
         background: #fbfbfb;
