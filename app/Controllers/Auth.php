@@ -78,7 +78,7 @@ class Auth extends BaseController
         if (!$this->validate([
             'username' => 'required|is_unique[tbl_user.nama_user]|max_length[15]',
             'password' => 'required|min_length[8]',
-            'passcnf' => 'required|matches[password]',
+            'password_confirmation' => 'required|matches[password]',
             // 'email' => 'required|valid_email',
         ])) {
 

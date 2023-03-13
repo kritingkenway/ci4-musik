@@ -12,7 +12,7 @@ class Cart extends BaseController
             'total' => $this->total(),
         ];
         // dd(session()->get('shopping-cart'));
-        return view('keranjang', $data);
+        return view('keranjang2', $data);
     }
 
     public function buy($id)
@@ -40,27 +40,30 @@ class Cart extends BaseController
             session()->set('shopping-cart', array($data));
         }
 
-        return redirect()->back();
+        return redirect()->to('/cart');
     }
 
     public function remove($id)
     {
-        $cart = array_values(session('shopping-cart'));
+        // dd($id);
         $index = $this->exists($id);
-        session()->remove($cart[$index]);
+        $cart = array_values(session('shopping-cart'));
+        unset($cart[$index]);
+
         session()->set('shopping-cart', $cart);
         return redirect()->to('/cart');
     }
 
-    protected function update()
+    public function update()
     {
+
         $items = array_values(session('shopping-cart'));
 
         for ($i = 0; $i < count($items); $i++) {
 
-            $items[$i]['qty'] = $this->request->getVar('qty');
+            $items[$i]['qty'] = $this->request->getVar('qty')[$i];
         };
-        session()->set('shopping-cart', 'items');
+        session()->set('shopping-cart', $items);
         return redirect()->to('/cart');
     }
     protected function exists($id)
@@ -78,9 +81,13 @@ class Cart extends BaseController
     {
         $total = 0;
         $items = array_values(session('shopping-cart'));;
-        foreach ($items as $i) {
-            $total = $i['harga_barang'] * $i['qty'];
+        if ($items != null) {
+            foreach ($items as $i) {
+                $total += $i['harga_barang'] * $i['qty'];
+            }
+            return $total;
+        } else {
+            return $total;
         }
-        return $total;
     }
 }

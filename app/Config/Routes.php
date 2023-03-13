@@ -41,8 +41,10 @@ $routes->get('/collection/(:num)', 'LandingPage::product_detail/$1');
 $routes->get('/collection', 'LandingPage::collection');
 $routes->get('/', 'LandingPage');
 // Cart Route
-$routes->get('/cart', 'Cart::index');
+$routes->put('/cart/update', 'Cart::update');
+$routes->delete('/cart/delete/(:num)', 'Cart::remove/$1');
 $routes->get('/cart/(:num)', 'Cart::buy/$1');
+$routes->get('/cart', 'Cart::index');
 
 
 

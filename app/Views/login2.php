@@ -18,7 +18,7 @@
 
       </div>
     </div>
-    <form method="post" action='/login' class="form">
+    <form method="POST" action='/login' class="form">
       <label for="username" style="padding-top:13px">&nbsp;Username</label>
       <input id="username" class="form-content" type="username" name="username" autocomplete="on" required />
       <div class="form-border"></div>
@@ -28,7 +28,7 @@
       <a href="#">
         <legend id="forgot-pass">Forgot password?</legend>
       </a>
-      <input id="submit-btn" type="submit" name="submit" value="LOGIN" /><a href="/register" id="signup">Don't have account yet?</a>
+      <input id="submit-btn" type="submit" name="login" value="LOGIN" /><a href="/register" id="signup">Don't have account yet?</a>
     </form>
   </div>
 </body>
