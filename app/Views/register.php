@@ -10,34 +10,30 @@
 </head>
 
 <body>
-  <div id="card">
-    <div id="card-content">
-      <div id="card-title">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4 offset-md-4 mt-5">
-              <div class="card ">
-                <div class="card-title text-center">
-                  <h1>Register Form</h1>
+
+            <div id="card">
+              <div id="card-content">
+                <div id="card-title">
+                  <h2>LOGIN</h2>
+                  <div class="underline-title"></div>
+
                 </div>
-                <div class="card-body">
-                  <form action="/register" method="post">
+              </div>
+
                     <!-- <div class="form-group">
                       <label for="username">Nama Lengkap</label>
                       <input type="text" name="nama" class="form-control" id="name" aria-describedby="name" placeholder="Nama lengkap" autocomplete="off">
                     </div> -->
-                    <div class="form-group">
-                      <label for="username">Username</label>
-                      <input type="text" name="username" class="form-control" id="username" aria-describedby="username" placeholder="username" autocomplete="off">
-                    </div>
-                    <div class="form-group">
-                      <label for="password">Password</label>
-                      <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <label for="password">Konfirmasi Password</label>
-                      <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Password">
-                    </div>
+              <form method="POST" action='/login' class="form">
+                    <label for="username" style="padding-top:13px">&nbsp;Username</label>
+                    <input id="username" class="form-content" type="username" name="username" autocomplete="on" required />
+                    <div class="form-border"></div>
+                    <label for="user-password" style="padding-top:22px">&nbsp;Password</label>
+                    <input id="user-password" class="form-content" type="password" name="password" required />
+                    <div class="form-border"></div>
+                     <label for="user-password" style="padding-top:22px">&nbsp;Konfirmasi Password</label>
+                    <input id="user-password" class="form-content" type="password" name="password" required />
+                    <div class="form-border"></div>
                     <button type="submit" class="btn btn-primary" name='register'>Register</button>
                   </form>
                 </div>
