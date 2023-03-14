@@ -4,7 +4,7 @@
 <head>
 
   <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/css/style.css">
-  <title>Login</title>
+  <title>Register</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 </head>
@@ -14,7 +14,7 @@
             <div id="card">
               <div id="card-content">
                 <div id="card-title">
-                  <h2>LOGIN</h2>
+                  <h2>REGISTER</h2>
                   <div class="underline-title"></div>
 
                 </div>
@@ -34,7 +34,7 @@
                      <label for="user-password" style="padding-top:22px">&nbsp;Konfirmasi Password</label>
                     <input id="user-password" class="form-content" type="password" name="password" required />
                     <div class="form-border"></div>
-                    <button type="submit" class="btn btn-primary" name='register'>Register</button>
+                    <input id="submit-btn" type="submit" name="login" value="REGISTER" />
                   </form>
                 </div>
               </div>
