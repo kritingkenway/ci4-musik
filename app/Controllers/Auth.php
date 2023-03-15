@@ -92,7 +92,7 @@ class Auth extends BaseController
             // 'email' => $this->request->getVar('email'),
             // 'nama' => $this->request->getVar('nama'),
         ];
-
+        
         $this->userModel->save($data);
         return redirect()->to('/login')->with('success', 'Akun berhasil dibuat silahkan Login');
     }

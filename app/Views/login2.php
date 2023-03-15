@@ -15,7 +15,7 @@
       <div id="card-title">
         <h2>LOGIN</h2>
         <div class="underline-title"></div>
-
+          <?= session()->getFlashdata('success')?>
       </div>
     </div>
     <form method="POST" action='/login' class="form">
