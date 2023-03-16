@@ -28,7 +28,7 @@
       <a href="#">
         <legend id="forgot-pass">Forgot password?</legend>
       </a>
-      <input id="submit-btn" type="submit" name="login" value="LOGIN" /><a href="/register" id="signup">Don't have account yet?</a>
+      <input id="submit-btn" type="submit" name="login" value="LOGIN" onclick="alert('Berhasil Login')" /><a href="/register" id="signup">Don't have account yet?</a>
     </form>
   </div>
 </body>

@@ -37,7 +37,7 @@
                      <label for="user-password" style="padding-top:22px">&nbsp;Konfirmasi Password</label>
                     <input id="user-password" class="form-content" type="password" name="password_confirmation"/>
                     <div class="form-border"></div>
-                    <input id="submit-btn" type="submit" name="register" value="REGISTER" />
+                    <input id="submit-btn" type="submit" name="register" value="REGISTER" onclick="alert('Berhasil Register')"/>
                   </form>
                 </div>
               </div>
