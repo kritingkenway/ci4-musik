@@ -105,7 +105,7 @@
               <input type="hidden" name='_method' value="delete">
             </form>
             <tr>
-              <td class="column-1"><img src="#" alt="#"></td>
+              <td class="column-1"><img src="<?= base_url('uploads/admin/') . $i['gambar'] ?>" alt="#"></td>
               <td class="column-2"><?= $i['nama_barang'] ?></td>
               <td class="column-3"><?= number_to_currency($i['harga_barang'], 'IDR') ?></td>
               <td class="column-4 p-l-70">

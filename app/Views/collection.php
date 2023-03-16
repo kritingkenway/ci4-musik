@@ -72,7 +72,7 @@
         <?php foreach ($collection as $produk) : ?>
           <div class="col-md-3">
             <div class="card border-dark">
-              <img src="<?= base_url() ?>/assets/images/keyboard.jpg" class="card-img-top" alt="...">
+              <img src="<?= base_url('uploads/admin/') . $produk['gambar'] ?>" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title font-weight-bold"><?= $produk['nama_barang'] ?></h5>
                 <label class="card-text harga"><?= number_to_currency($produk['harga_barang'], 'IDR') ?></label><br>
