@@ -103,7 +103,7 @@
                                 foreach ($products as $product) : ?>
                                     <tr>
                                         <td><?= $angka++ ?></td>
-                                        <td><img src="<?= base_url() ?>/assets/images/accordion.jpg" alt="" style="width: 200px;"></td>
+                                        <td><img src="<?= base_url('uploads/admin/') . $product['gambar'] ?>" alt="" style="width: 200px;"></td>
                                         <td>
                                             <p><span>Nama Barang: </span> <?= $product['nama_barang'] ?></p>
                                             <p><span>Harga: </span> <?= number_to_currency($product['harga_barang'], "IDR") ?></p>

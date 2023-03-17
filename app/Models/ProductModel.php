@@ -14,6 +14,7 @@ class ProductModel extends Model
         'nama_barang',
         'stok_barang',
         'harga_barang',
+        'gambar'
 
     ];
 }

@@ -36,8 +36,8 @@
 
     <div class="mb-3">
         <div class="div">
-            <img src="" class="img-thumbnail d-inline" style='width: 50px;'>
-            <caption>*gk ada gambar</caption>
+            <img src="<?= base_url('uploads/admin/') . $product['gambar'] ?>" class="img-thumbnail d-inline" style='width: 50px;'>
+            <caption>* <?= $product['gambar'] ?></caption>
             <input class="form-control col-2" type="file" id="formFile" name='gambar'>
         </div>
     </div>
