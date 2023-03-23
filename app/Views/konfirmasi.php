@@ -24,7 +24,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link rel="stylesheet" type="text/css" href="stylee.css">
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
  
 
@@ -122,12 +122,17 @@
                         <input type="text" class="form-control" name="" placeholder="Masukkan Nama Pemilik Rekening">
                 </div>
             </div>
+            <br>
             <div class="row">
                 <label class="col-4">Alamat</label>
                 <div class="col-8">
-                        <input type="text" class="form-control" name="" placeholder="Masukkan Alamat">
+                  <input type="text" class="form-control" name="" placeholder="Alamat">
+                  <input type="text" class="form-control" name="" placeholder="Kode Pos">
+                  <input type="text" class="form-control" name="" placeholder="Provinsi">
+                  <input type="text" class="form-control" name="" placeholder="Kabupaten">
                 </div>
               </div>
+              <br>
             <div class="row">
                 <label class="col-4">Tanggal Transfer</label>
                 <div class="col-8">
