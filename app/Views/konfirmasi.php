@@ -123,6 +123,12 @@
                 </div>
             </div>
             <div class="row">
+                <label class="col-4">Alamat</label>
+                <div class="col-8">
+                        <input type="text" class="form-control" name="" placeholder="Masukkan Alamat">
+                </div>
+              </div>
+            <div class="row">
                 <label class="col-4">Tanggal Transfer</label>
                 <div class="col-8">
                         <input type="text" class="form-control" name="" placeholder="dd/mm/yyyy">
