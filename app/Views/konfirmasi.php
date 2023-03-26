@@ -30,7 +30,7 @@
 
 
 
-    <title>Keranjang belanja</title>
+    <title>Checkout</title>
 </head>
 
 <body>
@@ -154,7 +154,7 @@
             <div class="row">
                 <label class="col-4"> </label>
                 <div class="col-8">
-                        <input type="submit" name="Proses Checkout" value="Proses Checkout" onclick="alert('Berhasil Checkout')">
+                <a href="#" class="btn btn-info btn-lg" onclick="alert('Berhasil Checkout')">Proses Checkout</a>
                 </div>
             </div>
         </form>
