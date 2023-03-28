@@ -45,7 +45,9 @@ $routes->put('/cart/update', 'Cart::update');
 $routes->delete('/cart/delete/(:num)', 'Cart::remove/$1');
 $routes->get('/cart/(:num)', 'Cart::buy/$1');
 $routes->get('/cart', 'Cart::index');
-
+// checkout route
+$routes->post('/checkout', 'Checkout::checkout');
+$routes->get('/checkout', 'Checkout::checkout');
 
 
 

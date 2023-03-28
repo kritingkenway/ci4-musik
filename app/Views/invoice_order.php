@@ -1,0 +1,1 @@
+AKAN Muncul Invoice berupa menampilkan No rekening dari pemilik toko

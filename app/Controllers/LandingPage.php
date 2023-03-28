@@ -2,12 +2,15 @@
 
 namespace App\Controllers;
 
+// use CodeIgniter\I18n\Time;
+
 class LandingPage extends BaseController
 {
     public function index()
     {
         $data = [
             'title' => 'Home',
+            // 'time' => Time::now('Asia/Jakarta')->format('Y-m-d')
         ];
         return view('home', $data);
     }

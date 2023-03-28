@@ -4,6 +4,10 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 use App\Models\ProductModel;
+use App\Models\ConfirmPayModel;
+use App\Models\DetailTransactionModel;
+use App\Models\TransactionModel;
+use App\Models\AddressModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -26,6 +30,10 @@ abstract class BaseController extends Controller
     protected $db;
     protected $userModel;
     protected $productModel;
+    protected $addressModel;
+    protected $transactionModel;
+    protected $detailTransactionModel;
+    protected $confirmPayModel;
     // protected $validation;
     /**
      * Instance of the main Request object.
@@ -41,7 +49,7 @@ abstract class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = ['number', 'form'];
+    protected $helpers = ['number', 'form', 'text', 'date'];
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
@@ -62,6 +70,10 @@ abstract class BaseController extends Controller
 
         $this->userModel = new UserModel();
         $this->productModel = new ProductModel();
+        $this->detailTransactionModel = new DetailTransactionModel();
+        $this->transactionModel = new TransactionModel();
+        $this->confirmPayModel = new ConfirmPayModel();
+        $this->addressModel = new AddressModel();
         $this->db = \Config\Database::connect();
         // $this->validation = \Config\Services::validation();
         // E.g.: $this->session = \Config\Services::session();
