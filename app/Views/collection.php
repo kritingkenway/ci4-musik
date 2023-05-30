@@ -25,16 +25,6 @@
       <p class="lead font-weight-bold">Toko Alat Musik Terlengkap di Subang<br>
       </p>
 
-    <div class ="d-flex justify-content-between align-items-center mt-4">
-          <div class="d-flex align-items-center">
-            </div>
-            <div class="wrap-search">
-              <input type="text" class="form-control" placeholder="Cari Produk">
-              <div class="wrap-icon-s">
-                <img class="icon-media" src="assets/images/search-icon.png" alt="">
-              </div>
-            </div>
-            <p>
           </div>
        </div>
     </div>
@@ -82,6 +72,18 @@
 
 
   <div class="container">
+
+  <div class ="d-flex justify-content-between align-items-center mt-4">
+          <div class="d-flex align-items-center">
+            </div>
+            <div class="wrap-search card border-dark">
+              <input type="text" class="form-control" placeholder="Cari Produk">
+              <div class="wrap-icon-s">
+                <img class="icon-media" src="assets/images/search-icon.png" alt="">
+              </div>
+            </div>
+            <p>
+          </div>
 
     <div class="row mt-3 text-center">
       <?php if ($collection != NULL) { ?>
