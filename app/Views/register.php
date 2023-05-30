@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
   <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/css/style.css">
   <title>Register</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-
 </head>
-
 <body>
-
   <div id="card">
     <div id="card-content">
       <div id="card-title">
         <h2>REGISTER</h2>
         <div class="underline-title"></div>
-
       </div>
     </div>
     <?php if ($validation != null) : ?>

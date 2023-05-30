@@ -67,17 +67,6 @@
                             <th class="column-4 p-l-70">Jumlah</th>
                             <th class="column-5">Sub Total</th>
                             <th class="column-6" width="20%">Action</th>
-                        </tr>
-                        <?php foreach ($items as $i) : ?>
-                            <tr>
-                                <td class="column-1"><img src="#" alt="#"></td>
-                                <td class="column-2"><?= $i['nama_barang'] ?></td>
-                                <td class="column-3"><?= number_to_currency($i['harga_barang'], 'IDR') ?></td>
-                                <td class="column-4 p-l-70"><?= $i['qty'] ?></td>
-                                <td class="column-5"><?= number_to_currency(($i['harga_barang'] * $i['qty']), 'IDR') ?></td>
-                                <td class="column-6" width="20%">Action</td>
-                            </tr>
-                        <?php endforeach ?>
                         <tr>
                             <td class="column-1" colspan="4">Total Belanja</td>
                             <td class="column-2"><?= $total ?></td>

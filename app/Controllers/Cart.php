@@ -11,7 +11,6 @@ class Cart extends BaseController
             'items' => session()->get('shopping-cart'),
             'total' => $this->total(),
         ];
-        // dd(session()->get('shopping-cart'));
         return view('keranjang2', $data);
     }
 

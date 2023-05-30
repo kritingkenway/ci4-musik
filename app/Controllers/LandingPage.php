@@ -12,6 +12,7 @@ class LandingPage extends BaseController
             'title' => 'Home',
             // 'time' => Time::now('Asia/Jakarta')->format('Y-m-d')
         ];
+        // dd(session()->get('id_user'));
         return view('home', $data);
     }
 

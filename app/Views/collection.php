@@ -16,21 +16,34 @@
 </head>
 
 <body>
+  
   <!-- Jumbotron -->
   <div class="jumbotron jumbotron-fluid text-center">
     <div class="container">
-      <h1 class="display-4"><span class="font-weight-bold">Melody Store</span></h1>
+    <h1 class="display-4"><span class="font-weight-bold">Melody Store</span></h1>
       <hr>
       <p class="lead font-weight-bold">Toko Alat Musik Terlengkap di Subang<br>
       </p>
+
+    <div class ="d-flex justify-content-between align-items-center mt-4">
+          <div class="d-flex align-items-center">
+            </div>
+            <div class="wrap-search">
+              <input type="text" class="form-control" placeholder="Cari Produk">
+              <div class="wrap-icon-s">
+                <img class="icon-media" src="assets/images/search-icon.png" alt="">
+              </div>
+            </div>
+            <p>
+          </div>
+       </div>
     </div>
-  </div>
   <!-- Akhir Jumbotron -->
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg  bg-dark">
     <div class="container">
-      <a class="navbar-brand text-white" href="index.html"><strong><?= $title ?></strong></a>
+      <a class="navbar-brand text-white" href="index.html"><strong><?= $title ?> </strong></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,17 +56,20 @@
           <li class="nav-item">
             <a class="nav-link mr-4" href="/collection">DAFTAR BARANG</a>
           </li>
+          
           <?php if (session()->has('logged-in')) { ?>
-            <li class="nav-item">
-              <a class="nav-link mr-4" href="/cart"><img src="<?= base_url() ?>/assets/images/s.png" class="card-img-top" alt="Image" height="42" width="42"></a>
-            </li>
+            
             <li class="nav-item">
               <a class="nav-link mr-4 " href="/logout">LOGOUT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mr-4" href="/cart"><img src="<?= base_url() ?>/assets/images/s.png" class="card-img-top" alt="Image" height="42" width="42"></a>
             </li>
           <?php } else { ?>
             <li class="nav-item">
               <a class="nav-link mr-4 " href="/login">LOGIN</a>
             </li>
+
 
           <?php } ?>
         </ul>

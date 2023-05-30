@@ -66,7 +66,10 @@ class Produk extends BaseController
 
         $file = $this->request->getFile('gambar');
         if ($file->isValid() && !$file->hasMoved()) {
-            unlink(FCPATH . 'uploads/admin/' . $this->productModel->find($id)['gambar']);
+            if ($this->productModel->find($id)['gambar'] != 'default.jpg') {
+
+                unlink(FCPATH . 'uploads/admin/' . $this->productModel->find($id)['gambar']);
+            }
             $data = [
                 'id_barang' => $id,
                 'id_kategori' => $this->request->getVar('id_kategori'),

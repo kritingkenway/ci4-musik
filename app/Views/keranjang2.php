@@ -63,11 +63,12 @@
           <li class="nav-item">
             <a class="nav-link mr-4 text-white" href="/collection">DAFTAR BARANG</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link mr-4" href="/cart"><img src="<?= base_url() ?>/assets/images/s.png" class="card-img-top" alt="Image" height="42" width="42"></a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link mr-4 " href="/logout">LOGOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-4" href="/cart"><img src="<?= base_url() ?>/assets/images/s.png" class="card-img-top" alt="Image" height="42" width="42"></a>
           </li>
         </ul>
       </div>
