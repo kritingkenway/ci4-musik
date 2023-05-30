@@ -10,11 +10,14 @@ class ConfirmPayModel extends Model
 
     protected $primaryKey = 'id_pembayaran';
 
-    protected $userTimestamps = true;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
 
-    protected $allowedFields = [];
+
+    protected $allowedFields = [
+        'id_transaksi',
+        'username',
+        'nama_rekening',
+        'tanggal_pembayaran',
+        'bank',
+        'gambar'
+    ];
 }

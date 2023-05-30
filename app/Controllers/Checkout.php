@@ -14,6 +14,7 @@ class Checkout extends BaseController
             $data = [
                 'title' => 'Checkout',
                 'total' => $this->total(),
+                'alamat' => $this->addressModel->where('id_user', session()->get('id_user'))->findAll(),
                 'items' => session()->get('shopping-cart')
             ];
             return view('checkout', $data);
@@ -50,7 +51,7 @@ class Checkout extends BaseController
         }
 
         //dilanjutkan dengan menginput data transaksi
-        $id_transaksi = 'P' . random_string('numeric', 5);
+        $id_transaksi = 'P' . random_string('numeric', 4);
         $transaksi = [
             'id_transaksi' => $id_transaksi,
             'tanggal_transaksi' => Time::now('Asia/Jakarta')->format('Y-m-d'),
@@ -75,7 +76,18 @@ class Checkout extends BaseController
 
         session()->remove('shopping-cart');
         session()->set('shopping-cart', []);
-        return view('invoice_order');
+
+        $data = [
+            'transaksi' =>
+            $this->db
+                ->table('tbl_detailtransaksi')
+                ->join('tbl_barang', 'tbl_barang.id_barang = tbl_detailtransaksi.id_barang', 'left')
+                ->where('id_transaksi', $id_transaksi)
+                ->get()->getResultArray(),
+            'id_transaksi' => $id_transaksi
+        ];
+
+        return view('berhasil', $data);
     }
 
 
@@ -91,5 +103,12 @@ class Checkout extends BaseController
         } else {
             return $total;
         }
+    }
+
+    public function autofill($id_alamat)
+    {
+        $query = $this->addressModel->find($id_alamat);
+
+        return $query;
     }
 }

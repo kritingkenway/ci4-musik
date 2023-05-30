@@ -24,7 +24,7 @@
   <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/css/style3.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/css/fontawesome/css/all.min.css">
 
-
+  <script src="<?= base_url() ?>js/jquery.js"></script>
 
 
   <title>Informasi</title>
@@ -32,8 +32,8 @@
 
 <body>
 
-   <!-- Navbar -->
-   <nav class="navbar navbar-expand-lg  bg-dark">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg  bg-dark">
     <div class="container">
       <a class="navbar-brand text-white" href="#"><strong><?= $title ?> </strong> </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,7 +95,7 @@
             <tr>
               <td><?= $no++ ?></td>
               <td><?= $i['nama_barang'] ?></td>
-              <td><?= $i['harga_barang'] ?></td>
+              <td><?= number_to_currency($i['harga_barang'], 'IDR') ?></td>
               <td><?= $i['qty'] ?></td>
               <td><?= number_to_currency(($i['qty'] * $i['harga_barang']), 'IDR') ?></td>
             </tr>
@@ -120,9 +120,14 @@
         <ul>
           <div class="row">
             <div class="col-8">
-              <legend>Email</legend>
-              <input type="text" class="form-control" name="" placeholder="Masukkan Email Anda">
-              <input type="hidden" class="form-control" name="id_alamat" value='0'>
+              <legend>Pilih Alamat</legend>
+              <select class="form-select" name="id_alamat" id='id_alamat'>
+                <option value="0" selected> -- Buat Alamat Baru -- </option>
+                <?php foreach ($alamat as $i) : ?>
+                  <option value="<?= $i['id_alamat'] ?>"><?= $i['alamat'] ?></option>
+                <?php endforeach ?>
+              </select>
+
             </div>
           </div>
           <br>
@@ -130,21 +135,21 @@
           <div class="row">
             <div class="col-8">
               <legend>Alamat Pengiriman</legend>
-              <input type="text" class="form-control" name="nama_depan" placeholder="Nama depan">
+              <input type="text" class="form-control" name="nama_depan" id="nama_depan" placeholder="Nama depan">
               <br>
-              <input type="text" class="form-control" name="nama_belakang" placeholder="Nama belakang">
+              <input type="text" class="form-control" name="nama_belakang" id="nama_belakang" placeholder="Nama belakang">
               <br>
-              <input type="text" class="form-control" name="alamat" placeholder="Alamat">
+              <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Alamat">
               <br>
-              <input type="text" class="form-control" name="kecamatan" placeholder="Kecamatan">
+              <input type="text" class="form-control" name="kecamatan" id="kecamatan" placeholder="Kecamatan">
               <br>
-              <input type="text" class="form-control" name="kota" placeholder="Kota">
+              <input type="text" class="form-control" name="kota" id="kota" placeholder="Kota">
               <br>
-              <input type="text" class="form-control" name="provinsi" placeholder="Provinsi">
+              <input type="text" class="form-control" name="provinsi" id="provinsi" placeholder="Provinsi">
               <br>
-              <input type="text" class="form-control" name="kode_pos" placeholder="Kode Pos">
+              <input type="text" class="form-control" name="kode_pos" id="kode_pos" placeholder="Kode Pos">
               <br>
-              <input type="text" class="form-control" name="no_telp" placeholder="No. Telepon">
+              <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="No. Telepon">
             </div>
           </div>
           <br>
@@ -154,3 +159,29 @@
     </div>
     </form>
   </div>
+
+</body>
+
+<script>
+  $('#id_alamat').on('change', (event) => {
+    getAlamat(event.target.value).then(alamat => {
+
+
+      // $('#nama_depan').val(alamat.nama_depan)
+      console.log(alamat.nama_depan)
+      // $('')
+      // $('')
+      // $('')
+      // $('')
+      // $('')
+      // $('')
+    })
+  })
+
+  async function getAlamat(id) {
+    let resp = await fetch('/autofill/' + id)
+    let data = await resp.json()
+
+    return data;
+  }
+</script>

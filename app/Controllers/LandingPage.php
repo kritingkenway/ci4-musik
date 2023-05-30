@@ -23,6 +23,7 @@ class LandingPage extends BaseController
             'title' => 'Daftar Barang',
             'collection' => $this->productModel->findAll()
         ];
+
         return view('collection', $data);
     }
 

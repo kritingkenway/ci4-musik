@@ -48,7 +48,10 @@ $routes->get('/cart', 'Cart::index');
 // checkout route
 $routes->post('/checkout', 'Checkout::checkout');
 $routes->get('/checkout', 'Checkout::checkout');
-
+$routes->get('/autofill/(:num)', 'Checkout::autofill/$1');
+// konfirmasi pembayaran route
+$routes->get('/konfirmasi-pembayaran', 'ConfirmPay');
+$routes->post('/konfirmasi-pembayaran', 'ConfirmPay::input');
 
 
 // Admin Routes
