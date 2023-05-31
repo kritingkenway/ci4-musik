@@ -16,18 +16,18 @@
 </head>
 
 <body>
-  
+
   <!-- Jumbotron -->
   <div class="jumbotron jumbotron-fluid text-center">
     <div class="container">
-    <h1 class="display-4"><span class="font-weight-bold">Melody Store</span></h1>
+      <h1 class="display-4"><span class="font-weight-bold">Melody Store</span></h1>
       <hr>
       <p class="lead font-weight-bold">Toko Alat Musik Terlengkap di Subang<br>
       </p>
 
-          </div>
-       </div>
     </div>
+  </div>
+  </div>
   <!-- Akhir Jumbotron -->
 
   <!-- Navbar -->
@@ -46,9 +46,9 @@
           <li class="nav-item">
             <a class="nav-link mr-4" href="/collection">DAFTAR BARANG</a>
           </li>
-          
+
           <?php if (session()->has('logged-in')) { ?>
-            
+
             <li class="nav-item">
               <a class="nav-link mr-4 " href="/logout">LOGOUT</a>
             </li>
@@ -73,17 +73,23 @@
 
   <div class="container">
 
-  <div class ="d-flex justify-content-between align-items-center mt-4">
-          <div class="d-flex align-items-center">
-            </div>
-            <div class="wrap-search card border-dark">
-              <input type="text" class="form-control" placeholder="Cari Produk">
-              <div class="wrap-icon-s">
-                <img class="icon-media" src="assets/images/search-icon.png" alt="">
-              </div>
-            </div>
-            <p>
+    <div class="d-flex justify-content-between align-items-center mt-4">
+      <div class="d-flex align-items-center">
+      </div>
+      <div class="wrap-search card border-dark">
+        <form action="/collection" method="get">
+
+          <input type="text" class="form-control" placeholder="Cari Produk" name='nama_barang'>
+          <div class="wrap-icon-s">
+
+
+            <img class="icon-media" src="assets/images/search-icon.png" alt="">
+
           </div>
+        </form>
+      </div>
+      <p>
+    </div>
 
     <div class="row mt-3 text-center">
       <?php if ($collection != NULL) { ?>

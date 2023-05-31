@@ -37,6 +37,7 @@ $routes->post('/login', 'Auth::login');
 $routes->get('/register', 'Auth::register');
 $routes->post('/register', 'Auth::register');
 // User Routes
+$routes->get('/collection/(:alpha)', 'LandingPage::search/$1');
 $routes->get('/collection/(:num)', 'LandingPage::product_detail/$1');
 $routes->get('/collection', 'LandingPage::collection');
 $routes->get('/', 'LandingPage');

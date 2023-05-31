@@ -19,9 +19,16 @@ class LandingPage extends BaseController
     public function collection()
     {
 
+        $nama_barang = $this->request->getVar('nama_barang');
+
+        if ($nama_barang) {
+            $barang = $this->search($nama_barang);
+        } else {
+            $barang = $this->productModel->findAll();
+        }
         $data = [
             'title' => 'Daftar Barang',
-            'collection' => $this->productModel->findAll()
+            'collection' => $barang
         ];
 
         return view('collection', $data);
@@ -38,5 +45,10 @@ class LandingPage extends BaseController
         ];
 
         return view('detail_produk', $data);
+    }
+    public function search($nama_barang)
+    {
+
+        return $this->db->table('tbl_barang')->like('nama_barang', $nama_barang)->get()->getResultArray();
     }
 }
