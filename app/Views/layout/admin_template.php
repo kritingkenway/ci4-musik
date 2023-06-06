@@ -54,12 +54,12 @@
                                 Products
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        <li class="nav-item">
+                            <a class="nav-link <?= uri_string() == 'admin/transaksi' ? 'active' : '' ?>" href="/admin/transaksi">
                                 <span data-feather="users" class="align-text-bottom"></span>
-                                Customers
+                                Transaksi User
                             </a>
-                        </li> -->
+                        </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="bar-chart-2" class="align-text-bottom"></span>

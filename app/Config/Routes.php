@@ -64,6 +64,9 @@ $routes->get('/admin/produk/delete/(:num)', "Admin\Produk::delete/$1");
 // -----------------------------------------------------------------------
 $routes->get('/admin/produk/(:num)', "Admin\Produk::editProduk/$1");
 $routes->get('/admin/produk', "Admin\Produk::index");
+//-----------------------------------------------------------------------
+$routes->get('/admin/transaksi', "Admin\Transaksi::index");
+
 
 
 
