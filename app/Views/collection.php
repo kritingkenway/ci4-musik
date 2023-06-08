@@ -46,8 +46,11 @@
           <li class="nav-item">
             <a class="nav-link mr-4" href="/collection">DAFTAR BARANG</a>
           </li>
-
+          
           <?php if (session()->has('logged-in')) { ?>
+            <li class="nav-item">
+              <a class="nav-link mr-4" href="/konfirmasi-pembayaran">Konfirmasi Pembayaran</a>
+            </li>
 
             <li class="nav-item">
               <a class="nav-link mr-4 " href="/logout">LOGOUT</a>

@@ -63,6 +63,9 @@
           <li class="nav-item">
             <a class="nav-link mr-4 text-white" href="/collection">DAFTAR BARANG</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link mr-4 text-white" href="/konfirmasi-pembayaran">Konfirmasi Pembayaran</a>
+          </li>
          
           <li class="nav-item">
             <a class="nav-link mr-4 " href="/logout">LOGOUT</a>
