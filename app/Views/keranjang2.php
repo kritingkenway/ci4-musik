@@ -31,12 +31,51 @@
 
 
   <title>Keranjang belanja</title>
+
+  <style type="text/css">
+	html,body{
+		padding: 0;
+		margin:0;
+		font-family: sans-serif;
+	}
+ 
+ 
+	li.dropdown {
+		display: inline-block;
+	}
+ 
+	.dropdown:hover .isi-dropdown {
+		display: block;
+	}
+ 
+	.isi-dropdown a:hover {
+		color: #fff !important;
+	}
+ 
+	.isi-dropdown {
+		position: absolute;
+		display: none;
+		box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		background-color: #313335;
+	}
+ 
+	.isi-dropdown a {
+		color: # !important;
+	}
+ 
+	.isi-dropdown a:hover {
+		color: #232323 !important;
+		background: #f3f3f3 !important;
+	}
+</style>
+
 </head>
 
 <body>
 
-  <!-- Jumbotron -->
-  <div class="jumbotron jumbotron-fluid text-center">
+ <!-- Jumbotron -->
+ <div class="jumbotron jumbotron-fluid text-center">
     <div class="container">
       <h1 class="display-2"><span class="font-weight-bold">Melody Store</span></h1>
       <hr>
@@ -49,31 +88,46 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg  bg-dark">
     <div class="container">
-
-      <a class="navbar-brand text-white" href="index.html"><strong>Home </strong></a>
+      <a class="navbar-brand text-white" href="#"><strong><?= $title ?> </strong> </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
+          
           <li class="nav-item">
             <a class="nav-link mr-4 text-white" href="/">HOME</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mr-4 text-white" href="/collection">DAFTAR BARANG</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link mr-4 text-white" href="/konfirmasi-pembayaran">Konfirmasi Pembayaran</a>
-          </li>
          
-          <li class="nav-item">
-            <a class="nav-link mr-4 " href="/logout">LOGOUT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mr-4" href="/cart"><img src="<?= base_url() ?>/assets/images/s.png" class="card-img-top" alt="Image" height="42" width="42"></a>
-          </li>
+          <ul class="navbar-nav ml-auto">
+          
+          <li class="dropdown"><a href="#"><img src="<?= base_url() ?>/assets/images/pp.png" class="card-img-top" alt="Image" height="35" width="35"></a>
+                  <ul class="isi-dropdown">
+                  <?php if (session()->has('logged-in')) { ?>
+            <li class="nav-item">
+              <a class="nav-link mr-4" href="/konfirmasi-pembayaran">Konfirmasi Pembayaran</a>
+            </li>
+            <?php } ?>
+            <li class="nav-item">
+              <a class="nav-link mr-4" href="/cart">Keranjang</a>
+            </li>
+            <?php if (session()->has('logged-in')) { ?>
+            <li class="nav-item">
+              <a class="nav-link mr-4 " href="/logout">Log-Out</a>
+            </li>
+          <?php } else { ?>
+            <li class="nav-item">
+              <a class="nav-link mr-4 " href="/login">Log-In</a>
+            </li>
+            
+          <?php } ?>
+            </ul>
         </ul>
+        
       </div>
     </div>
   </nav>
