@@ -41,7 +41,8 @@
                                     <th width="50">No</th>
                                     <th width="100">Kode Transaksi</th>
                                     <th width="100">User</th>
-                                    <th width="100">Aksi</th>
+                                    <th width="100">Tanggal Transaksi</th>
+                                    <!-- <th width="100">Aksi</th> -->
 
                                 </tr>
                             </thead>
@@ -53,10 +54,12 @@
                                         <td><?= $angka++ ?></td>
                                         <td><?= $i['id_transaksi'] ?></td>
                                         <td><?= $i['nama_user'] ?></td>
-                                        <td>
+                                        <td><?= $i['tanggal_transaksi'] ?></td>
+
+                                        <!-- <td>
                                             <button type="button" class="btn btn-info mb-2 d-block" onclick="editProduk('<?= $i['id_transaksi'] ?>')" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Lihat Detail</button>
 
-                                        </td>
+                                        </td> -->
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>

@@ -53,6 +53,8 @@ $routes->get('/autofill/(:num)', 'Checkout::autofill/$1');
 // konfirmasi pembayaran route
 $routes->get('/konfirmasi-pembayaran', 'ConfirmPay');
 $routes->post('/konfirmasi-pembayaran', 'ConfirmPay::input');
+// Transaksi User Route
+$routes->get('/transaksi', 'Transaksi');
 
 
 // Admin Routes

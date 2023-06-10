@@ -22,6 +22,7 @@ class Cart extends BaseController
             'nama_barang' => $product['nama_barang'],
             'harga_barang' => $product['harga_barang'],
             'gambar' => $product['gambar'],
+            'stok' => $product['stok_barang'],
             'qty' => 1
         ];
 

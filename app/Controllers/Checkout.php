@@ -70,7 +70,7 @@ class Checkout extends BaseController
                 'id_barang' => $i['id'],
                 'jumlah_barang' => $i['qty']
             ];
-
+            $this->stock($i['id'], $i['qty']);
             $this->detailTransactionModel->insert($data);
         }
 
@@ -103,6 +103,19 @@ class Checkout extends BaseController
         } else {
             return $total;
         }
+    }
+
+    public function stock($id, $qty)
+    {
+        $stok = $this->productModel->find($id);
+        $updatedStock = $stok['stok_barang'] - $qty;
+
+        $data = [
+            'id_barang' => $id,
+            'stok_barang' => $updatedStock
+        ];
+
+        $this->productModel->save($data);
     }
 
     public function autofill($id_alamat)

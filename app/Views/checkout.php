@@ -30,42 +30,43 @@
   <title>Informasi</title>
 
   <style type="text/css">
-	html,body{
-		padding: 0;
-		margin:0;
-		font-family: sans-serif;
-	}
- 
- 
-	li.dropdown {
-		display: inline-block;
-	}
- 
-	.dropdown:hover .isi-dropdown {
-		display: block;
-	}
- 
-	.isi-dropdown a:hover {
-		color: #fff !important;
-	}
- 
-	.isi-dropdown {
-		position: absolute;
-		display: none;
-		box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.2);
-		z-index: 1;
-		background-color: #313335;
-	}
- 
-	.isi-dropdown a {
-		color: # !important;
-	}
- 
-	.isi-dropdown a:hover {
-		color: #232323 !important;
-		background: #f3f3f3 !important;
-	}
-</style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+
+    li.dropdown {
+      display: inline-block;
+    }
+
+    .dropdown:hover .isi-dropdown {
+      display: block;
+    }
+
+    .isi-dropdown a:hover {
+      color: #fff !important;
+    }
+
+    .isi-dropdown {
+      position: absolute;
+      display: none;
+      box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      background-color: #313335;
+    }
+
+    .isi-dropdown a {
+      color: # !important;
+    }
+
+    .isi-dropdown a:hover {
+      color: #232323 !important;
+      background: #f3f3f3 !important;
+    }
+  </style>
 
 </head>
 
@@ -81,39 +82,42 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          
+
           <li class="nav-item">
             <a class="nav-link mr-4 text-white" href="/">HOME</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mr-4 text-white" href="/collection">DAFTAR BARANG</a>
           </li>
-         
-          <ul class="navbar-nav ml-auto">
-          
-          <li class="dropdown"><a href="#"><img src="<?= base_url() ?>/assets/images/pp.png" class="card-img-top" alt="Image" height="35" width="35"></a>
-                  <ul class="isi-dropdown">
-                  <?php if (session()->has('logged-in')) { ?>
-            <li class="nav-item">
-              <a class="nav-link mr-4" href="/konfirmasi-pembayaran">Konfirmasi Pembayaran</a>
-            </li>
-            <?php } ?>
-            <li class="nav-item">
-              <a class="nav-link mr-4" href="/cart">Keranjang</a>
-            </li>
-            <?php if (session()->has('logged-in')) { ?>
-            <li class="nav-item">
-              <a class="nav-link mr-4 " href="/logout">Log-Out</a>
-            </li>
+
+          <?php if (session()->has('logged-in')) { ?>
+            <ul class="navbar-nav ml-auto">
+
+              <li class="dropdown"><a href="#"><img src="<?= base_url() ?>/assets/images/pp.png" class="card-img-top" alt="Image" height="35" width="35"></a>
+                <ul class="isi-dropdown">
+                  <li class="nav-item">
+                    <a class="nav-link mr-4" href="/transaksi">PESANANKU</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mr-4" href="/konfirmasi-pembayaran">KONFIRMASI PEMBAYARAN</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link mr-4" href="/cart">KERANJANG</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link mr-4 " href="/logout">LOGOUT</a>
+                  </li>
+                </ul>
+            </ul>
           <?php } else { ?>
             <li class="nav-item">
-              <a class="nav-link mr-4 " href="/login">Log-In</a>
+              <a class="nav-link mr-4 " href="/login">LOGIN</a>
             </li>
-            
+
           <?php } ?>
-            </ul>
         </ul>
-        
       </div>
     </div>
   </nav>

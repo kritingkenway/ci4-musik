@@ -30,42 +30,43 @@
   <title>MelodyStore.com</title>
 
   <style type="text/css">
-    html,body{
-        padding: 0;
-        margin:0;
-        font-family: sans-serif;
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: sans-serif;
     }
- 
- 
+
+
     li.dropdown {
-        display: inline-block;
+      display: inline-block;
     }
- 
+
     .dropdown:hover .isi-dropdown {
-        display: block;
+      display: block;
     }
- 
+
     .isi-dropdown a:hover {
-        color: #fff !important;
+      color: #fff !important;
     }
- 
+
     .isi-dropdown {
-        position: absolute;
-        display: none;
-        box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        background-color: #313335;
+      position: absolute;
+      display: none;
+      box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      background-color: #313335;
     }
- 
+
     .isi-dropdown a {
-        color: # !important;
+      color: # !important;
     }
- 
+
     .isi-dropdown a:hover {
-        color: #232323 !important;
-        background: #f3f3f3 !important;
+      color: #232323 !important;
+      background: #f3f3f3 !important;
     }
-</style>
+  </style>
 
 </head>
 
@@ -91,39 +92,42 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          
+
           <li class="nav-item">
             <a class="nav-link mr-4 text-white" href="/">HOME</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mr-4 text-white" href="/collection">DAFTAR BARANG</a>
           </li>
-         
-          <ul class="navbar-nav ml-auto">
-          
-          <li class="dropdown"><a href="#"><img src="<?= base_url() ?>/assets/images/pp.png" class="card-img-top" alt="Image" height="35" width="35"></a>
-                  <ul class="isi-dropdown">
-                  <?php if (session()->has('logged-in')) { ?>
-            <li class="nav-item">
-              <a class="nav-link mr-4" href="/konfirmasi-pembayaran">Konfirmasi Pembayaran</a>
-            </li>
-            <?php } ?>
-            <li class="nav-item">
-              <a class="nav-link mr-4" href="/cart">Keranjang</a>
-            </li>
-            <?php if (session()->has('logged-in')) { ?>
-            <li class="nav-item">
-              <a class="nav-link mr-4 " href="/logout">Log-Out</a>
-            </li>
+
+          <?php if (session()->has('logged-in')) { ?>
+            <ul class="navbar-nav ml-auto">
+
+              <li class="dropdown"><a href="#"><img src="<?= base_url() ?>/assets/images/pp.png" class="card-img-top" alt="Image" height="35" width="35"></a>
+                <ul class="isi-dropdown">
+                  <li class="nav-item">
+                    <a class="nav-link mr-4" href="/transaksi">PESANANKU</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mr-4" href="/konfirmasi-pembayaran">KONFIRMASI PEMBAYARAN</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link mr-4" href="/cart">KERANJANG</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link mr-4 " href="/logout">LOGOUT</a>
+                  </li>
+                </ul>
+            </ul>
           <?php } else { ?>
             <li class="nav-item">
-              <a class="nav-link mr-4 " href="/login">Log-In</a>
+              <a class="nav-link mr-4 " href="/login">LOGIN</a>
             </li>
-            
+
           <?php } ?>
-            </ul>
         </ul>
-        
       </div>
     </div>
   </nav>
@@ -132,55 +136,44 @@
 
 
 
-<section class="konten">
-        <div class="container">
-                <div class="modal fade" id="staticBackdrop2" class="myModal" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Detail Transaksi</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="modalbox-body">
+  <section class="konten">
+    <div class="container">
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- TABEL DATA -->
+      <!-- TABEL DATA -->
 
-                <div class="row mb-3 container">
-                    <div class="col">
-                       
-            <h1>History Pembelian</h1>
-            <hr>
-                <thead>
-                     <div class="row mb-3 container">
-                    <div class="col">
-                        <table class="table table-light  table-striped table table-bordered" style='vertical-align: middle;'>
-                            <thead class="table-dark">
+      <div class="row mb-3 container">
+        <div class="col">
+
+          <h1><?= $title ?></h1>
+          <hr>
+          <thead>
+            <div class="row mb-3 container">
+              <div class="col">
+                <table class="table table-light  table-striped table table-bordered" style='vertical-align: middle;'>
+                  <thead class="table-dark">
                     <tr>
-                        <th>Pesanan</th>
-                        <th>Tanggal</th>
-                        <th>Status Pesanan</th>
-                        <th>Total</th>
+                      <th>Pesanan</th>
+                      <th>Tanggal</th>
+                      <th>Status Pesanan</th>
+                      <!-- <th>Total</th> -->
                     </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <th>x</th>
-                        <th>x</th>
-                        <th>x</th>
-                        <th>x</th>
-                    </tr>
-                </tbody>
-            </table>
-            <a href="home.php" class="btn btn-primary">Kembali</a>
-        </div>
-</section>
+                  </thead>
+                  <tbody>
+
+                    <?php foreach ($transaksi as $i) : ?>
+                      <tr>
+                        <td><?= $i['id_transaksi'] ?></td>
+                        <td><?= $i['tanggal_transaksi'] ?></td>
+                        <td>x</td>
+                        <!-- <td>x</td> -->
+                      </tr>
+                    <?php endforeach ?>
+                  </tbody>
+                </table>
+                <a href="/" class="btn btn-primary">Kembali</a>
+              </div>
+  </section>
 
 </body>
+
 </html>
