@@ -16,7 +16,7 @@
 
                 <!-- HTML DETAIL -->
                 <div class="modal fade" id="staticBackdrop2" class="myModal" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="staticBackdropLabel">Detail Transaksi</h5>
@@ -42,7 +42,7 @@
                                     <th width="100">Kode Transaksi</th>
                                     <th width="100">User</th>
                                     <th width="100">Tanggal Transaksi</th>
-                                    <!-- <th width="100">Aksi</th> -->
+                                    <th width="100">Aksi</th>
 
                                 </tr>
                             </thead>
@@ -56,10 +56,10 @@
                                         <td><?= $i['nama_user'] ?></td>
                                         <td><?= $i['tanggal_transaksi'] ?></td>
 
-                                        <!-- <td>
-                                            <button type="button" class="btn btn-info mb-2 d-block" onclick="editProduk('<?= $i['id_transaksi'] ?>')" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Lihat Detail</button>
+                                        <td>
+                                            <button type="button" class="btn btn-info mb-2 d-block" onclick="detailTransaksi('<?= $i['id_transaksi'] ?>')" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Lihat Detail</button>
 
-                                        </td> -->
+                                        </td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>

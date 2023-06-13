@@ -19,38 +19,42 @@
 </head>
 
 <body>
-<div id="card">
-            <div id="card-content">
-      <div id="card-title">
-<section class="konten">
-    <div class="container">
-        <h1>Berhasil checkout</h1>
-        <hr>
-        <table class="table table-bordered">
+    <div id="card">
+        <div id="card-content">
+            <div id="card-title">
+                <section class="konten">
+                    <div class="container">
+                        <h1>Berhasil checkout</h1>
+                        <hr>
+                        <table class="table table-bordered">
 
-            <h3>Detail Pesanan : <?= $id_transaksi ?></h3>
-            <thead>
-                <tr>
-                    <th>Nama Produk</th>
-                    <th>Harga</th>
-                    <th>Jumlah</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($transaksi as $i) : ?>
-                    <tr>
-                        <td><?= $i['nama_barang'] ?></td>
-                        <td><?= $i['harga_barang'] ?></td>
-                        <td><?= $i['jumlah_barang'] ?></td>
-                        <td><?= number_to_currency(($i['harga_barang'] * $i['jumlah_barang']), 'IRD') ?></td>
-                    </tr>
-                <?php endforeach ?>
-            </tbody>
-        </table>
-        <a href="/" class="btn btn-primary">Kembali ke halaman utama</a>
-    </div>
-</section>
+                            <h3>Detail Pesanan : <?= $id_transaksi ?></h3>
+                            <thead>
+                                <tr>
+                                    <th>Nama Produk</th>
+                                    <th>Harga</th>
+                                    <th>Jumlah</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($transaksi as $i) : ?>
+                                    <tr>
+                                        <td><?= $i['nama_barang'] ?></td>
+                                        <td><?= $i['harga_barang'] ?></td>
+                                        <td><?= $i['jumlah_barang'] ?></td>
+                                        <td><?= number_to_currency(($i['harga_barang'] * $i['jumlah_barang']), 'IRD') ?></td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </tbody>
+                            <tfoot>
+                                <td colspan="3">Total Transaksi : </td>
+                                <td><?= number_to_currency($total, 'IDR') ?></td>
+                            </tfoot>
+                        </table>
+                        <a href="/" class="btn btn-primary">Kembali ke halaman utama</a>
+                    </div>
+                </section>
 
 </body>
 

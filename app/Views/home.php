@@ -85,7 +85,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg  bg-dark">
     <div class="container">
-      <a class="navbar-brand text-white" href="#"><strong><?= $title ?> </strong> </a>
+      <a class="navbar-brand text-white" href="#"><strong><?= $title ?></strong> </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -106,18 +106,18 @@
               <li class="dropdown"><a href="#"><img src="<?= base_url() ?>/assets/images/pp.png" class="card-img-top" alt="Image" height="35" width="35"></a>
                 <ul class="isi-dropdown">
                   <li class="nav-item">
-                    <a class="nav-link mr-4" href="/transaksi">PESANANKU</a>
+                    <a class="nav-link" href="/transaksi">PESANANKU</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link mr-4" href="/konfirmasi-pembayaran">KONFIRMASI PEMBAYARAN</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link mr-4" href="/cart">KERANJANG</a>
+                    <a class="nav-link" href="/konfirmasi-pembayaran">KONFIRMASI PEMBAYARAN</a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link mr-4 " href="/logout">LOGOUT</a>
+                    <a class="nav-link" href="/cart">KERANJANG</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link " href="/logout">LOGOUT</a>
                   </li>
                 </ul>
             </ul>

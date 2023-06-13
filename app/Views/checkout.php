@@ -96,18 +96,18 @@
               <li class="dropdown"><a href="#"><img src="<?= base_url() ?>/assets/images/pp.png" class="card-img-top" alt="Image" height="35" width="35"></a>
                 <ul class="isi-dropdown">
                   <li class="nav-item">
-                    <a class="nav-link mr-4" href="/transaksi">PESANANKU</a>
+                    <a class="nav-link" href="/transaksi">PESANANKU</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link mr-4" href="/konfirmasi-pembayaran">KONFIRMASI PEMBAYARAN</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link mr-4" href="/cart">KERANJANG</a>
+                    <a class="nav-link" href="/konfirmasi-pembayaran">KONFIRMASI PEMBAYARAN</a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link mr-4 " href="/logout">LOGOUT</a>
+                    <a class="nav-link" href="/cart">KERANJANG</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link " href="/logout">LOGOUT</a>
                   </li>
                 </ul>
             </ul>
@@ -195,7 +195,7 @@
               <br>
               <input type="text" class="form-control" name="nama_belakang" id="nama_belakang" placeholder="Nama belakang">
               <br>
-              <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Alamat">
+              <textarea type="text" class="form-control" name="alamat" id="alamat" placeholder="Alamat"></textarea>
               <br>
               <input type="text" class="form-control" name="kecamatan" id="kecamatan" placeholder="Kecamatan">
               <br>

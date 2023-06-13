@@ -54,7 +54,7 @@ class Checkout extends BaseController
         $id_transaksi = 'P' . random_string('numeric', 4);
         $transaksi = [
             'id_transaksi' => $id_transaksi,
-            'tanggal_transaksi' => Time::now('Asia/Jakarta')->format('Y-m-d'),
+            'tanggal_transaksi' => Time::now('Asia/Jakarta')->format('Y-m-d-H-i-s'),
             'id_alamat' => $id_alamat,
             'id_user' => session()->get('id_user')
         ];
@@ -73,7 +73,7 @@ class Checkout extends BaseController
             $this->stock($i['id'], $i['qty']);
             $this->detailTransactionModel->insert($data);
         }
-
+        $total = $this->total();
         session()->remove('shopping-cart');
         session()->set('shopping-cart', []);
 
@@ -84,7 +84,8 @@ class Checkout extends BaseController
                 ->join('tbl_barang', 'tbl_barang.id_barang = tbl_detailtransaksi.id_barang', 'left')
                 ->where('id_transaksi', $id_transaksi)
                 ->get()->getResultArray(),
-            'id_transaksi' => $id_transaksi
+            'id_transaksi' => $id_transaksi,
+            'total' => $total
         ];
 
         return view('berhasil', $data);

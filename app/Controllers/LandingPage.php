@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-// use CodeIgniter\I18n\Time;
+use CodeIgniter\I18n\Time;
 
 class LandingPage extends BaseController
 {
@@ -10,7 +10,7 @@ class LandingPage extends BaseController
     {
         $data = [
             'title' => 'Home',
-            // 'time' => Time::now('Asia/Jakarta')->format('Y-m-d')
+            // 'time' => Time::now('Asia/Jakarta')->format('Y-m-d-H-i-s')
         ];
         // dd(session()->get('id_user'));
         return view('home', $data);
